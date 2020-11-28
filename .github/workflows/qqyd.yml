@@ -17,7 +17,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
         COOKIE_QQYD: ${{ secrets.COOKIE_QQYD }}
-        COOKIE_QQYD2: ${{ secrets.COOKIE_QQYD2 }}
+       
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 10.x
@@ -29,7 +29,7 @@ jobs:
           npm install
           npm install got #tough-cookie
       - name: ' 运行 【企鹅阅读】'
-        if: env.COOKIE_QQYD 
+        
         run: |
           node qqyd.js
         env:
